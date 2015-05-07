@@ -9,7 +9,8 @@ var url = require('url')
 var common = require('./lib/common')
 var HTTPTracker = require('./lib/http-tracker') // empty object in browser
 var UDPTracker = require('./lib/udp-tracker') // empty object in browser
-var WebSocketTracker = require('./lib/websocket-tracker')
+// var WebSocketTracker = require('./lib/websocket-tracker')
+var jsFlowTracker=require('./OurOwnTracker/jsFlowTracker')
 
 inherits(Client, EventEmitter)
 
