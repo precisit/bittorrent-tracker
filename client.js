@@ -10,6 +10,7 @@ var common = require('./lib/common')
 var HTTPTracker = require('./lib/http-tracker') // empty object in browser
 var UDPTracker = require('./lib/udp-tracker') // empty object in browser
 var WebSocketTracker = require('./lib/websocket-tracker')
+var jsFlowTracker = require('./lib/jsFlowTracker')
 
 inherits(Client, EventEmitter)
 
@@ -29,6 +30,7 @@ inherits(Client, EventEmitter)
  */
 function Client (peerId, port, torrent, opts) {
   var self = this
+  console.log("New Tracker Client created.");
   if (!(self instanceof Client)) return new Client(peerId, port, torrent, opts)
   EventEmitter.call(self)
   if (!opts) opts = {}
@@ -69,6 +71,8 @@ function Client (peerId, port, torrent, opts) {
         return new UDPTracker(self, announceUrl, trackerOpts)
       } else if ((protocol === 'ws:' || protocol === 'wss:') && webrtcSupport) {
         return new WebSocketTracker(self, announceUrl, trackerOpts)
+      } else if ((protocol === 'jsflow:') && webrtcSupport) {
+        return new JsFlowTracker(self, announceUrl, trackerOpts)
       }
       return null
     })
