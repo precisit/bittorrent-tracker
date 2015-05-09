@@ -64,7 +64,7 @@ function Client (peerId, port, torrent, opts) {
     .map(function (announceUrl) {
       var protocol = url.parse(announceUrl).protocol
 
-      console.log(protocol);
+      console.log('protocol: ', protocol);
 
       if ((protocol === 'http:' || protocol === 'https:') &&
           typeof HTTPTracker === 'function') {
