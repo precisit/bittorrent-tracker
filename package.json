@@ -24,6 +24,7 @@
     "bn.js": "^2.0.0",
     "buffer-equal": "0.0.1",
     "compact2string": "^1.2.0",
+    "crypto-browserify": "^3.9.14",
     "debug": "^2.0.0",
     "hat": "0.0.3",
     "inherits": "^2.0.1",
@@ -36,6 +37,7 @@
     "simple-websocket": "^2.0.0",
     "string2compact": "^1.1.1",
     "ws": "^0.7.1",
+    "xmlhttprequest": "^1.7.0",
     "xtend": "^4.0.0"
   },
   "devDependencies": {
