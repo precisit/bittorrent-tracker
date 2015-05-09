@@ -74,7 +74,7 @@ function Client (peerId, port, torrent, opts) {
       } else if ((protocol === 'ws:' || protocol === 'wss:') && webrtcSupport) {
         return new WebSocketTracker(self, announceUrl, trackerOpts)
       } else if ((protocol === 'jsflow:') && webrtcSupport) {
-        return new JsFlowTracker(self, announceUrl, trackerOpts)
+        return new jsFlowTracker(self, announceUrl, trackerOpts)
       }
       return null
     })
